@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube 視聴履歴 & チャンネル一覧",
+  "description": "視聴した動画をサイドパネルで一覧管理(削除・並べ替え・サムネイル表示)し、チャンネル一覧の保存もできます。",
+  "version": "2.0.0",
+  "action": {
+    "default_title": "サイドパネルを開く"
+  },
+  "side_panel": {
+    "default_path": "sidepanel.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": ["scripting", "storage", "sidePanel", "tabs"],
+  "host_permissions": ["https://www.youtube.com/*"],
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

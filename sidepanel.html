@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="sidepanel.css" />
+</head>
+<body>
+  <header>
+    <h1>視聴履歴</h1>
+    <div class="actions">
+      <button id="sort-btn" title="新しい順 / 古い順を切り替え">↓新しい順</button>
+      <button id="export-btn" title="テキストファイルに出力">書き出し</button>
+      <button id="clear-btn" title="すべて削除">全消去</button>
+    </div>
+  </header>
+  <div class="toolbar">
+    <input id="filter" type="search" placeholder="タイトルで絞り込み…" />
+    <button id="save-channels-btn" title="アクティブなYouTubeタブのサイドバーからチャンネル一覧を保存">チャンネル一覧保存</button>
+  </div>
+  <p id="status" class="status"></p>
+  <ul id="list"></ul>
+  <p id="empty" class="empty" hidden>
+    まだ記録がありません。<br />YouTubeで動画を視聴するとここに表示されます。
+  </p>
+  <script src="sidepanel.js"></script>
+</body>
+</html>
